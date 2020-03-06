@@ -23,7 +23,7 @@ const BOOKMARKS = (function() {
         <li class="bookmark-list-item" id="${bookmark.id}">
           <div class="bookmark-list-item-condensed-view">
             <div class="condensed-view-title">${bookmark.title}</div>
-            <div class="condensed-view-rating">${ratingGenerator(bookmark.rating)}</div>
+            <div class="condensed-view-rating">${ratingGenerator(bookmark.rating)}</div><span><i class="fas fa-plus"></i></span>
           </div>
         </li>
       `;
@@ -33,7 +33,7 @@ const BOOKMARKS = (function() {
         <li class="bookmark-list-item" id="${bookmark.id}">
           <div class="bookmark-list-item-expanded-view">
             <div class="expanded-view-title">${bookmark.title}</div>
-            <div class="expanded-view-rating">${ratingGenerator(bookmark.rating)}</div>
+            <div class="expanded-view-rating">${ratingGenerator(bookmark.rating)}</div><span><i class="fas fa-minus"></i></span>
             <div class="expanded-view-url"><a href="${bookmark.url}" target="_blank">Visit Site</a></div>
             <div class="expanded-view-desc">${bookmark.desc}</div>
           </div>
@@ -65,8 +65,8 @@ const BOOKMARKS = (function() {
           <label for="form-url-field">URL</label>
           <input type="text" name="url" id="form-url-field" placeholder="https://" required>
           <label for="form-rating-field">Rating</label>
-          <select name="rating" id="form-rating-field">
-            <option value="-1">-- Please Rate this Bookmark --</option>
+          <select name="rating" id="form-rating-field" required>
+            <option value="">-- You must choose a rating --</option>
             <option value="1">★ - 1 star</option>
             <option value="2">★★ - 2 stars</option>
             <option value="3">★★★ - 3 stars</option>
@@ -86,14 +86,14 @@ const BOOKMARKS = (function() {
 
   function render() {
     if (!STORE.isAdding) {
-      document.querySelector('.main-controls').removeAttribute('hidden');
+      $('.main-controls').removeAttr('hidden');
       let bookmarksInStore = [ ...STORE.bookmarks ];
       bookmarksInStore = bookmarksInStore.filter(bookmark => bookmark.rating >= STORE.filterBy);
       const fullBookmarksList = generateFullBookmarksList(bookmarksInStore);
       $('.content-view').html(fullBookmarksList);
     }
     else {
-      document.querySelector('.main-controls').setAttribute('hidden', true);
+      $('.main-controls').attr('hidden', true);
       const newBookmarkForm = generateNewBookmarkForm();
       $('.content-view').html(newBookmarkForm);
     }

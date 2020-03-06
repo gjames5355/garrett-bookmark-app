@@ -18,6 +18,10 @@ header,
   margin-right: auto;
 }
 
+.error-message {
+  text-align: center;
+}
+
 .content-view {
   width: 90%;
   padding-top: 120px;
@@ -41,6 +45,10 @@ header {
 textarea {
   resize: none;
   width: 100%;
+}
+
+.error-message {
+  color: red;
 }
 
 .bookmark-list {
@@ -161,4 +169,50 @@ select {
 
 .expanded-view-controls-edit-button {
   display: none;
+}
+
+.fas,
+.fa-plus,
+.fas,
+.fa-minus {
+  padding-right: 10px;
+}
+
+
+@media (min-width: 500px) {
+
+  .bookmark-list-item-condensed-view {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 10px;
+  }
+
+  .condensed-view-title,
+  .expanded-view-title {
+    width: 50%;
+  }
+
+  .fas,
+  .fa-minus {
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .bookmark-list-item-condensed-view {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px 0px;
+  }
+
+  .condensed-view-title,
+  .expanded-view-title {
+    width: 70%;
+  }
+
+  .fas,
+  .fa-minus {
+    padding-right: 10px;
+  }
 }

@@ -22,7 +22,7 @@ const API = (function() {
         } 
         return data;
       })
-      .catch(error => console.error(`${error.code} ${error.message}`));
+      .catch(error => $('#js-error-message').text(`Something went wrong: ${error.message}`));
   }
 
   function getAllBookmarks() {

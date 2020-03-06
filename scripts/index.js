@@ -5,5 +5,5 @@ $(() => {
       allBookmarks.forEach(bookmark => STORE.add(bookmark));
       BOOKMARKS.render();
     })
-    .catch(error => console.error(`${error.code} ${error.message}`));
+    .catch(error => $('#js-error-message').text(`Something went wrong: ${error.message}`));
 });
