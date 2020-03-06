@@ -24,7 +24,7 @@ header,
 
 .content-view {
   width: 90%;
-  padding-top: 120px;
+  padding-top: 250px;
   max-width: 640px;
 }
 
@@ -196,6 +196,20 @@ select {
   .fa-minus {
     padding-right: 10px;
   }
+
+  input {
+    padding: 10px;
+  }
+
+  .main-controls-add-button {
+    padding: 3px;
+  }
+
+  .copy {
+    margin-bottom: 25px;
+    font-size: 13px;
+  }
+
 }
 
 @media (min-width: 769px) {
@@ -214,5 +228,9 @@ select {
   .fas,
   .fa-minus {
     padding-right: 10px;
+  }
+
+  .copy {
+    font-size: 1em;
   }
 }
