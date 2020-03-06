@@ -7,10 +7,6 @@ A personal internet bookmark application, that users can create lists of their f
 
 I also bookmark sites, but often forget why and how useful the bookmark actually is. So I would end up never using the bookmarks. I wanted a bookmark app that I could access on any device with a rating and description. Bookmarks and lists are all created by the users.
 
-## Build Status
-
-![Build Status](https://github.com/gjames5355/garrett-bookmark-app)
-
 ## Screenshots
 Active Screen:
 
